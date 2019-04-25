@@ -1,6 +1,6 @@
 # tika-server Docker Image
 
-This is the git repo of the docker image for [Apache Tika server](https://tika.apache.org). 
+This is the git repo of very small docker images (< 190MB) for [Apache Tika server](https://tika.apache.org). 
 
 It is built on Alpine Linux image with OpenJDK 8 runtime environment. The current installed Tika Server version is 1.20. Docker image tag should match the installed Tika version.
 
@@ -17,11 +17,11 @@ Pull down the Docker image from Dockerhub:
 
     docker pull tongwang/tika-server
 
-Run the container, execute the following command:
+Run the container:
 
     docker run -d -p 9998:9998 tongwang/tika-server
 
-A small number of environment variables are used by the Docker image:
+A small number of environment variables are used by this image:
 
 * TIKA_JAVA_OPTS: JVM options for Tika server
 * TIKA_SPAWN_CHILD: set this environment variable if you want to start tika-server in a child process
