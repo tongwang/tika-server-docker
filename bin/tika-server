@@ -1,0 +1,8 @@
+#!/bin/bash
+if [ -z "${TIKA_SPAWN_CHILD}" ]
+then
+      SPAWN_CHILD=""
+else
+      SPAWN_CHILD="-spawnChild"
+fi
+java ${TIKA_JAVA_OPTS} -jar /tika-server.jar ${SPAWN_CHILD} ${TIKA_CHILD_JAVA_OPTS} -h 0.0.0.0
