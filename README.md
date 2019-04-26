@@ -13,10 +13,6 @@ Since Tika release 1.7 you can use the Tesseract OCR parser within Tika. This Do
 
 ## Usage
 
-Pull down the Docker image from Dockerhub:
-
-    docker pull tongwang/tika-server
-
 Run the container:
 
     docker run -d -p 9998:9998 tongwang/tika-server
@@ -27,7 +23,7 @@ A small number of environment variables are used by this image:
 * TIKA_SPAWN_CHILD: set this environment variable if you want to start tika-server in a child process
 * TIKA_CHILD_JAVA_OPTS: JVM options for the child process if TIKA_SPAWN_CHILD is set
 
-Here is an example which starts tika-server in a child process with max heap size set to 1G:
+For example to start tika-server in a child process with max heap size set to 1G, run this:
 
     docker run -e "TIKA_SPAWN_CHILD=1" -e "TIKA_CHILD_JAVA_OPTS=-JXmx1g" -d -p 9998:9998 tongwang/tika-server
 
