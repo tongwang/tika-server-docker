@@ -1,15 +1,8 @@
 # tika-server Docker Image
 
-This is the git repo of very small docker images (< 190MB) for [Apache Tika server](https://tika.apache.org). 
+This is the git repo of a simple docker image for [Apache Tika server](https://tika.apache.org). 
 
-It is built on Alpine Linux image with OpenJDK 8 runtime environment. The current installed Tika Server version is 1.21. Docker image tag should match the installed Tika version.
-
-Since Tika release 1.7 you can use the Tesseract OCR parser within Tika. The Docker image `tongwang/tika-server-ocr` has the following Tesseract OCR languages pre-installed:
-
-* English
-* French
-* German
-* Spanish
+It is built on Debian buster image with the latest jre runtime environment. The current installed Tika Server version is 1.26. Docker image tag should match the installed Tika version.
 
 ## Usage
 
