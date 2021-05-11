@@ -28,7 +28,9 @@ RUN gpg --verify /tika-server-${TIKA_VERSION}.jar.asc /tika-server-${TIKA_VERSIO
 RUN apt-get clean -y && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 COPY bin/tika-server /usr/local/bin/tika-server
+COPY bin/healthcheck /usr/local/bin/healthcheck
 
 EXPOSE 9998
 ENTRYPOINT tika-server
 
+HEALTHCHECK CMD healthcheck

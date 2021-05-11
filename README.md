@@ -4,6 +4,8 @@ This is the git repo of a simple docker image for [Apache Tika server](https://t
 
 It is built on Debian buster image with the latest jre runtime environment. The current installed Tika Server version is 1.26. Docker image tag should match the installed Tika version.
 
+A healthcheck is enabled to remove orphaned tmp files and make sure /tmp have enough space.
+
 ## Usage
 
 Run the container:
@@ -15,6 +17,8 @@ A small number of environment variables are used by this image:
 * TIKA_OPTS: Tika server options
 * TIKA_JVM_OPTS: JVM options for Tika server
 * TIKA_CHILD_JVM_OPTS: JVM options for the child process if -spawnChild is set
+* TMP_FILE_EXPIRE_MIN: any tmp file in /tmp expires and is removed after this number of minutes. Default: 30
+* TMP_WATERMARK: pass healthcheck if the percentage of disk usage of /tmp is above this watermark. Defailt: 80
 
 For example to start tika-server in a child process with max heap size set to 1G, run this:
 

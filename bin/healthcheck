@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# clean up old tmp files
+find /tmp -name *.tmp -type f -mmin +${TMP_FILE_EXPIRE_MIN:-30} -delete
+
+# healthcheck on /tmp percentage
+TMP_PCT=`df /tmp | awk '{ print $5 }' | tail -n 1 | sed 's/%//'`
+if [ "$TMP_PCT" -gt "${TMP_WATERMARK:-80}" ]; then
+  	exit 1
+else
+  	exit 0
+fi
