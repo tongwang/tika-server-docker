@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # clean up old tmp files
-find /tmp -name *.tmp -type f -mmin +${TMP_FILE_EXPIRE_MIN:-30} -delete
+find /tmp -name *.tmp -type f -mmin +${TMP_FILE_EXPIRE_MIN:-15} -delete
 
 # healthcheck on /tmp percentage
 TMP_PCT=`df /tmp | awk '{ print $5 }' | tail -n 1 | sed 's/%//'`

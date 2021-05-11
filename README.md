@@ -17,7 +17,7 @@ A small number of environment variables are used by this image:
 * TIKA_OPTS: Tika server options
 * TIKA_JVM_OPTS: JVM options for Tika server
 * TIKA_CHILD_JVM_OPTS: JVM options for the child process if -spawnChild is set
-* TMP_FILE_EXPIRE_MIN: any tmp file in /tmp expires and is removed after this number of minutes. Default: 30
+* TMP_FILE_EXPIRE_MIN: any tmp file in /tmp expires and is removed after this number of minutes. Default: 15
 * TMP_WATERMARK: pass healthcheck if the percentage of disk usage of /tmp is above this watermark. Defailt: 80
 
 For example to start tika-server in a child process with max heap size set to 1G, run this:
