@@ -12,7 +12,7 @@ Run the container:
 
     docker run -d -p 9998:9998 tongwang/tika-server
 
-A [standard configuration file](https://cwiki.apache.org/confluence/display/TIKA/TikaServer+in+Tika+2.x) is placed at /etc/tika/tika-config.xml, which you may overwrite with your own configuration. Assuming your co
+A [standard configuration file](https://cwiki.apache.org/confluence/display/TIKA/TikaServer+in+Tika+2.x) is placed at /etc/tika/tika-config.xml, which you may overwrite with your own configuration:
 
     docker run -v /path/to/your/config_file:/etc/tika/tika-config.xml -d -p 9998:9998 tongwang/tika-server:2.4.1.0
 
